@@ -14,12 +14,17 @@ body {
 }
 
 .button-default {
-    background-color: #ca0046;
+    background-color: #a8043e;
     color: white;
     text-decoration: none;
     padding: 12px;
     font-weight: 600;
     border-radius: 12px;
+    cursor: pointer;
+}
+
+.button-default:hover {
+
 }
 
 .main-title {
@@ -39,7 +44,7 @@ body {
 
 .main-title h1 {
     font-size: 20pt;
-    color: #fa0057;
+    color: #d5034c;
     font-style: italic;
 }
 
@@ -57,20 +62,48 @@ body {
     justify-content: end;
     padding: 10px 15px;
     align-items: center;
-    background-color: #980439;
+    background-color: #a8043e;
     height: 60px;
 }
 
 .header nav {
     display: none;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
+}
+
+.header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 8px;
+    font-weight: 700;
+    font-size: 14pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 12px;
+    width: 160px;
+}
+
+.header nav a.active, .header nav a:hover {
+    background-color: #1e0250;
+}
+
+.header nav a p {
+    font-weight: 700;
+    font-size: 14pt;
+}
+
+.header nav a svg {
+    width: 30px;
+    margin-right: 8px;
+}
+
+.header nav a svg path {
+    fill: white;
 }
 
 .header nav.active {
-    background-color: #980439;
+    background-color: #a8043e;
     display: flex;
     position: fixed;
     top: 60px;
@@ -80,11 +113,19 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
+}
+
+.header nav .nav-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 120px;
+    width: 100%;
+}
+
+.header .toggle:hover {
+    cursor: pointer;
 }
 
 .header .toggle svg
@@ -98,4 +139,52 @@ body {
 
 .header .toggle .hidden {
     display: none;
+}
+
+@media only screen and (min-width: 991px) {
+    .header .toggle {
+        display: none;
+    }
+
+    .header nav {
+        display: flex;
+        position: relative;
+        margin: 0;
+    }
+
+    .header nav.active {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: auto;
+        height: auto;
+    }
+
+    .header nav .nav-items {
+        margin: 0;
+        flex-direction: row;
+    }
+
+    .header nav a {
+        color: white;
+        text-decoration: none;
+        margin: 8px;
+        font-weight: 700;
+        font-size: 14pt;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 7px 12px;
+        border-radius: 12px;
+        width: auto;
+    }
+
+    .header nav a p {
+        font-weight: 600;
+        font-size: 12pt;
+    }
+
+    .header nav a svg {
+        width: 25px;
+    }
 }
